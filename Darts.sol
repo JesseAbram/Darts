@@ -26,6 +26,11 @@ contract darts{
         msg.sender == owner;
     }
   
+    function fallback() payable public {
+        
+    }
+    
+    
     function setGame(address _player, uint _amount) public {
     
         var games = names[_player];
@@ -47,11 +52,10 @@ contract darts{
     }
      
  
-    function withdraw(uint amount) returns(bool) {
-        require(msg.sender(won) = 1);
-        owner.transfer(amount);
-        return true;
-
+    function withdraw(address _address) public {
+        if (names[_address].won != 0)
+        msg.sender.transfer(address(this).balance);
+        else revert();
     }
 
 }
